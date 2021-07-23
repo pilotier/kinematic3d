@@ -16,8 +16,6 @@ pathdef.m
 *.mexa64
 *.caffemodel
 *.mat
-*.jpg
-*.png
 *.pyc
 */output/*
 *~
