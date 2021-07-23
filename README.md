@@ -22,7 +22,7 @@ The Kalman Filter contains 2 general steps:
 
 ![](assets/Kalman.png)
 
-The framework uses an RPN to first estimate 3D boxes (Sec. 3.1). Previous frame tracks `τt−1` are then forcasted into `τt′` (prediction step) using the estimated Kalman velocity. Self-motion is compensated for applying a global ego-motion (Sec. 3.2) to tracks τt′. Lastly, the 3D boxes are used as observations to update/fuse τt′ with measurements using a kinematic 3D Kalman filter (Sec. 3.3). We now have the current estimated state `τt`.
+The framework uses an RPN to first estimate 3D boxes (Sec. 3.1). Ego-motion is estimated using boxes `Xt` and `Xt-1`. Previous frame tracks `τt−1` are then forcasted into `τt′` (prediction step) using the estimated Kalman velocity. Self-motion is then compensated for applying the global ego-motion estimation to tracks τt′. Lastly, the 3D boxes are used as observations to update/fuse `τt′` with measurements using a kinematic 3D Kalman filter (Sec. 3.3). We now have the current estimated state `τt`.
 
 
 
