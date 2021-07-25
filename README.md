@@ -1,6 +1,6 @@
 # The Kinematic3D Model
 
-Kinematic3D seeks to utilize temporal motion to preceive the physical world in 3D for self-driving applications. They Proposes a single model & kalman filter framework which is composed of 3 primary components; a 3D region proposal network (RPN), ego-motion estimation, and a novel kinematic model (which employs a kalman filter) to take advantage of temporal motion in videos.
+Kinematic3D seeks to utilize temporal motion to preceive the physical world in 3D for self-driving applications. They Propose a single model & kalman filter framework which is composed of 3 primary components; a 3D region proposal network (RPN), ego-motion estimation, and a novel kinematic model (which employs a kalman filter) to take advantage of temporal motion in videos.
 
 ## 3D RPN 
 The RPN consists of a backbone network and a detection head which predicts 3D box outputs relative to a set of predefined anchors. 
@@ -17,7 +17,7 @@ In order to leverage temporal motion, Kinematic3D integrates the 3D RPN and ego-
 
 ### Basic Kalman Filter Framework:
 The Kalman Filter contains 2 general steps: 
-1. Prediction step -> using motion model and the state estimate from `t-1`, giving us a predicted state for `t`
+1. Prediction step -> using motion model and the state estimate from `t-1`, giving us a predicted state for `t` which we will call `t'`
 2. update step -> using observation model and prediction state, giving us final state estimate for `t`
 
 ### Kinematic3D Kalman Filter
