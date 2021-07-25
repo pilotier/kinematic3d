@@ -42,6 +42,35 @@ output = model(im)
 
 ## Environment Setup
 
+### linux
+
+```
+conda create -n kinematic3d python=3.6.5
+conda activate kinematic3d
+
+conda install -c menpo opencv3=3.1.0 openblas
+conda install cython scikit-image
+conda install -c conda-forge easydict shapely
+
+conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=11.1 -c pytorch -c conda-forge
+
+git clone https://github.com/garrickbrazil/kinematic3d.git
+cd kinematic3d/
+<build nms & >
+
+apt update
+apt install libatlas-base-dev
+apt install libopenblas-dev
+apt install libgtk2.0-dev
+
+apt install unzip
+wget https://www.cse.msu.edu/computervision/Kinematic3D-Release.zip
+<then unzip it with -d into its own directory>
+
+<dataset setup .. >
+
+```
+
 ## Gstreamer PyTorch Pipeline 
 ```
 conda create -n gst python=3.6.5
