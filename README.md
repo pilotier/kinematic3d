@@ -26,9 +26,19 @@ The Kalman Filter contains 2 general steps:
 
 The framework uses an RPN to first estimate 3D boxes (Sec. 3.1). Ego-motion is estimated using boxes `Xt` and `Xt-1`. Previous frame tracks `τt−1` are then forcasted into `τt′` (prediction step) using the estimated Kalman velocity. Self-motion is then compensated for by applying the global ego-motion estimation to tracks `τt′`. Lastly, the 3D boxes are used as observations to update/fuse `τt′` with measurements using a kinematic 3D Kalman filter (Sec. 3.3). We now have the current estimated state of the track `τt`.
 
-# The Code 
+# The Code - WIP
 
-The original kinematic3d README can be found here; [kinematic3d.md](kinematic3d.md).
+The original kinematic3d README can be found here; [kinematic3d.md](kinematic3d.md). 
+
+Kinematic3D has built the kalman filter framework within the PyTorch model itself, which means we can call inference on the model as usual, and it will hold the necessary information from previous frame data to compute the kalman filter. 
+
+```python 
+model = kinematic3DModel()
+model.eval()
+img = get_im()
+img = preprocess(im)
+output = model(im)
+```
 
 ## Environment Setup
 
