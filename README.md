@@ -33,4 +33,11 @@ The original kinematic3d README can be found here; [kinematic3d.md](kinematic3d.
 ## Environment Setup
 
 ## Gstreamer PyTorch Pipeline 
+```
+conda create -n gst python=3.6.5
+conda activate gst
+conda install -c conda-forge pygobject
+conda install -c conda-forge gtk3
+conda install -c conda-forge gstreamer
+```
 
