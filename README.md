@@ -7,6 +7,8 @@ The RPN consists of a backbone network and a detection head which predicts 3D bo
 
 Here, Kinematic3D also proposes a novel object orientation formulation where they decompose orientation into 3 components; axis, heading and offset. This is a comprimise between classifying orientation via a series of discrete bins then regressing an offset, & directly regressing an offset. 
 
+![](assets/orientation.png)
+
 ## Ego Motion
 Kinematic3D estimates the ego motion of the capturing camera itself, narrowing down the work of the kalman filter to account for only the objects's motion. They define ego-motion in the conventional six degrees of freedom: translation `[γx, γy, γz]` in meters and rotation `[ρx, ρy, ρz]` in radians. Ultimately, they are able to model both ego motion and per-object velocity.
 
@@ -24,6 +26,11 @@ The Kalman Filter contains 2 general steps:
 
 The framework uses an RPN to first estimate 3D boxes (Sec. 3.1). Ego-motion is estimated using boxes `Xt` and `Xt-1`. Previous frame tracks `τt−1` are then forcasted into `τt′` (prediction step) using the estimated Kalman velocity. Self-motion is then compensated for by applying the global ego-motion estimation to tracks `τt′`. Lastly, the 3D boxes are used as observations to update/fuse `τt′` with measurements using a kinematic 3D Kalman filter (Sec. 3.3). We now have the current estimated state of the track `τt`.
 
-
-
 # The Code 
+
+The original kinematic3d README can be found here; [kinematic3d.md](kinematic3d.md).
+
+## Environment Setup
+
+## Gstreamer PyTorch Pipeline 
+
