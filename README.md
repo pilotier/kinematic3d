@@ -30,7 +30,7 @@ The framework uses an RPN to first estimate 3D boxes (Sec. 3.1). Ego-motion is e
 
 The original kinematic3d README can be found here; [kinematic3d.md](kinematic3d.md). 
 
-Kinematic3D has built the kalman filter framework within the PyTorch model itself, which means we can call inference on the model as usual, and it will hold the necessary information from previous frame data to compute the kalman filter. 
+Kinematic3D has built the kalman filter framework within the PyTorch model itself, which means we can call inference on the model as usual, and it will hold the necessary information from previous frames and track data to compute the kalman filter. 
 
 ```python 
 model = kinematic3DModel()
